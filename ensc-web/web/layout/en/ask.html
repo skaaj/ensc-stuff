@@ -1,0 +1,55 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row push-back">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+		<h1>Ask a question</h1>
+		<form class="horizontal-form" id="newQuestionForm" role="search" method="POST" action="/ensc-web/post_new">
+	      <input type="text" name="title" id="title" class="form-control big-search" placeholder="Type your question" required>
+	      <textarea name="message" class="form-control big-search" placeholder="Give presisions" required></textarea>
+	      <div name="tags_autocomplete" class="form-control big-search">
+						<ul id="tagList" class="list-inline">
+							<li id="addTag">
+								<input type="text" name="tags" class="tagInput" id="tagField" placeholder="Tags" />
+							</li>
+						</ul>
+		</div>
+	      <button class="btn btn-success btn-lg btn-expanded" type="submit">Ask</button>
+		</form>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row push-back">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+		{% if (lastQuestions!=null) and (lastQuestions|length>0) %}
+		<h1>Your older questions</h1>
+		<table class="table table-striped">
+				<tr>
+					<th>Questions</th>
+					<th>Number of answers</th>
+					<th>Status</th>
+				</tr>
+
+				{% for i in range(0, lastQuestions|length-1)%}
+				<tr>
+					<td><a href="/ensc-web/view/{{lastQuestions[i].post.id}}">{{lastQuestions[i].title}}</a></td>
+					<td>{{nbResponses[i]}}</td>
+					<td>{% if (lastQuestions[i].solved) %}
+						<span class="label label-success">Solved</span>
+						{% else %}
+						<span class="label label-warning">Pending</span>
+						{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+		{% endif %}
+			</div>
+			<div class="col-md-2"></div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Suppression</h4>
+      </div>
+     <form method="POST" action="deleteaccount">
+     <input type="hidden" name="userId" value="{{user.id}}"/>
+      <div class="modal-body">
+      <p>By typing your password, you confirm that <b>you are</b> the owner of the account to delete. The deletion of your account will pull the final deletion of your personnal datas.<br></p>
+		<h4>Type your password</h4>
+		<p><input type="password" class="form-control" placeholder="Mot de passe" name="password"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Delete</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		<form method="POST" action="/ensc-web/updateaccount">
+			<table class="table table-striped">
+				<tr>
+					<th>Informations</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>Login</td>
+					<td><input type="password" class="form-control" placeholder="{{user.login}}" disabled></td>
+				</tr>
+				<tr>
+					<td>First name</td>
+					<td><input name="firstname" type="text" class="form-control"  value="{{user.firstname}}"></td>
+				</tr>
+				<tr>
+					<td>Last name</td>
+					<td><input name="lastname" type="text" class="form-control" value="{{user.lastname}}"></td>
+				</tr>
+				<tr>
+					<td>E-Mail</td>
+					<td><input name="email" type="email" class="form-control" value="{{user.email}}"></td>
+				</tr>
+				<tr>
+					<td>Role</td>
+					<td><input type="password" class="form-control" placeholder="Rôle" disabled></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-primary btn-send btn-register">Modify</button>
+					</td>				
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div class="col-md-4">
+				<h3>Do you wish to leave?</h3>
+				<p>
+					If you delete your account, you will lose all your data stored in Askit.
+				</p>
+				<button class="btn btn-danger btn-send btn-register" data-toggle="modal" data-target="#delete_modal">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

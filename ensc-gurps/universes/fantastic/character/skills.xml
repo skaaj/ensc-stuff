@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSkill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Skill name="Boule de feu" strike="10" heal="0"/>
+  <Skill name="Coup tranchant" strike="20" heal="0"/>
+  <Skill name="Drain de vie" strike="5" heal="5"/>
+  <Skill name="Soigner" strike="0" heal="20"/>
+</ArrayOfSkill>

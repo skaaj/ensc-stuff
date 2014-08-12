@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CharacterID>player</CharacterID>
+  <Name>sheppard</Name>
+  <Money>100</Money>
+  <Experience>0</Experience>
+  <Points>300</Points>
+  <CurrentNode>neoleft</CurrentNode>
+  <Class>
+    <Name>Ingénieur</Name>
+    <Brief>Un ingénieur.</Brief>
+  </Class>
+  <Traits>
+    <Trait id="S">
+      <Name>Force</Name>
+      <Value>11</Value>
+      <Cost>10</Cost>
+    </Trait>
+    <Trait id="IQ">
+      <Name>Intelligence</Name>
+      <Value>11.5</Value>
+      <Cost>20</Cost>
+    </Trait>
+    <Trait id="DX">
+      <Name>Dextérité</Name>
+      <Value>11</Value>
+      <Cost>20</Cost>
+    </Trait>
+  </Traits>
+  <Skills>
+    <Skill name="Nuclear Beam" strike="50" heal="-10" />
+    <Skill name="Singularity Kung Fu" strike="10" heal="20" />
+  </Skills>
+  <Status>
+    <Status>
+      <Name>HP</Name>
+      <Value>55</Value>
+    </Status>
+  </Status>
+  <Inventory />
+</Character>

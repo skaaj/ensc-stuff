@@ -1,0 +1,43 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Mot de passe oublié</h4>
+      </div>
+      <form action="/ensc-web/forgottenpassword" method="post">
+      <div class="modal-body">
+    <p>Afin de récupérer votre mot de passe, veuillez saisir votre adresse email.<br></p>
+    <p><input type="email" class="form-control" placeholder="Email" name="email"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="gradient subnavbar"></div>
+<div class="container">
+<form class="form-signin" role="form"  method="POST" action="/ensc-web/log_user">
+  <h2 class="form-signin-heading">Connexion</h2>
+  {% if erreurConnexion!=null %}
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Navré!</strong><br/> La combinaison nom d'utilisateur/mot de passe nous est inconnue.
+  </div>
+  {% endif %}
+  <p>
+    <input name="login" type="login" class="form-control" placeholder="Nom d'utilisateur" required autofocus>
+    <input name="password" type="password" class="form-control" placeholder="Mot de passe" required>
+    <input class="form-control btn btn-lg btn-primary btn-block" type="submit" value="Se connecter">
+  </p>
+  <p><br>Mot de passe oublié? <a data-toggle="modal" data-target="#delete_modal">Cliquez ici</a>.</p>
+  <p>Vous n'avez pas compte? <a href="/ensc-web/register">Inscrivez-vous ici</a>.</p>
+</form>
+</div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,16 @@
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "twig/twig": "1.*"
+    },
+    
+    "autoload" :{
+    	"psr-4":{
+    		"Entities\\":"app/model/entities/",
+    		"Data\\":"app/model/connection/",
+    		"Application\\":"app/model/",
+            "Services\\":"app/services/",
+            "ValueObjects\\":"app/model/valueObjects/"
+    	}
+    }
+}

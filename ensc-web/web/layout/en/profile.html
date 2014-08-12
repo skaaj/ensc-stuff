@@ -1,0 +1,63 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-striped">
+				<tr>
+					<th>Informations</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>Login</td>
+					<td>{{userToShow.login}}</td>
+				</tr>
+				<tr>
+					<td>First name</td>
+					<td>{{userToShow.firstname}}</td>
+				</tr>
+				<tr>
+					<td>Last name</td>
+					<td>{{userToShow.lastname}}</td>
+				</tr>
+				<tr>
+					<td>Role</td>
+					<td>{{userToShow.role.name}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="table table-striped">
+				<tr>
+					<th>Statistics</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>Number of questions</td>
+					<td>{{nbQuestions}}</td>
+				</tr>
+				<tr>
+					<td>Number of posts</td>
+					<td>{{nbPosts}}</td>
+				</tr>
+				<tr>
+					<td>Number of votes</td>
+					<td>{{userToShow.nbvotes}}</td>
+				</tr>
+				<tr>
+					<td>Last question</td>
+					<td>
+						{% if (lastQuestion!=null)%}
+							<a href="/ensc-web/view/{{lastQuestion.post.id}}">{{lastQuestion.title}}</a>
+						{% else %}
+							No question
+						{% endif %}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

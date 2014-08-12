@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSkill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Skill name="Nuclear beam" strike="50" heal="-10"/>
+  <Skill name="Singularity Kung Fu" strike="10" heal="20"/>
+</ArrayOfSkill>

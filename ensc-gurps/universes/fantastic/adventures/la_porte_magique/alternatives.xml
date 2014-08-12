@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAlternative xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>dexterity</AlternativeID>
+    <Text>Passer en douce</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>guard</FailID>
+    <TraitID>DX</TraitID>
+    <Goal>14</Goal>
+  </Alternative>
+  <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>intelligence</AlternativeID>
+    <Text>Berner le garde</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>guard</FailID>
+    <TraitID>IQ</TraitID>
+    <Goal>14</Goal>
+  </Alternative>
+    <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>force</AlternativeID>
+    <Text>Impressionner le garde</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>loose</FailID>
+    <TraitID>IQ</TraitID>
+    <Goal>14</Goal>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight</AlternativeID>
+    <Text>Attaquer le garde</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>ulfric</NPCID>
+  </Alternative>
+</ArrayOfAlternative>

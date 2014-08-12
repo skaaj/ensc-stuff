@@ -1,0 +1,25 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<h1>Rechercher une question</h1>
+		<form class="navbar-form navbar-left" role="search" method="POST" action="/ensc-web/searchtext">
+		<div class="input-group">
+	      <input type="text" name="search" id="searchinput" class="form-control big-search" value="{{searchtext}}" placeholder="Une question ?" onkeyup="searchajax('results', 'searchinput')">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default big-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+	      </span>
+	    </div>
+		</form>
+	</div>
+	<div class="row" id="results">
+
+	</div>
+</div>
+<script>
+
+	
+</script>
+{% endblock %}

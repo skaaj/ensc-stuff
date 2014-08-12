@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron gradient">
+  <div class="container">
+  	<div class="col-lg-9">
+		<h1>Une question ?</h1>
+		<p>AskIt est une manière <b>simple</b> et <b>rapide</b> d'obtenir une réponse <b>précise</b>.</p>
+		<p>Évoluez grâce à une communauté <b>curieuse</b> et <b>active</b>.</p>
+		<p><br><i>La connaissance est faite pour être partagée.</i></p>
+  	</div>
+  	<div class="col-lg-3">
+  		{% if user == null %}
+		<form class="form-horizontal" role="form" method="post" action="/ensc-web/register_user">
+		  <div class="form-group">
+		      <input type="text" class="form-control" name="login" placeholder="Choisissez un nom d'utilisateur">
+		  </div>
+		  <div class="form-group">
+		      <input type="email" class="form-control" name="email"placeholder="Votre email">
+		  </div>
+		  <div class="form-group">
+		      <input type="password" class="form-control" name="password" placeholder="Créez un mot de passe">
+		  </div>
+		  <div class="form-group">
+		      <button type="submit" class="btn btn-success btn-lg btn-send">S'inscrire</button>
+		  </div>
+		</form>
+		{% endif %}
+  	</div>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<h1>Rechercher une question</h1>
+		<form class="navbar-form navbar-left" role="search" method="POST" action="/ensc-web/searchtext">
+		<div class="input-group">
+	      <input type="text" name="search" id="searchinput" class="form-control big-search" value="{{searchtext}}" placeholder="Une question ?" onkeyup="searchajax('results', 'searchinput')" onfocusout ="removeResultList('results','searchinput')">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default big-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+	      </span>
+	    </div>
+		</form>
+	</div>
+	<div class="row" id="results">
+	</div>
+	<div class="row" id="trending">
+		<div class="col-md-8">
+			<h1>Tendances</h1>
+			<table class="table table-striped">
+			<tr><th>Question</th><th>Posté par</th></tr>
+				{% for question in trendingQuestions %}
+				<tr>
+					<td> <a href="/ensc-web/view/{{question.post.id}}">{{question.title}}</a></td>
+					<td> <a href="/ensc-web/profile/{{question.post.author.id}}">{{question.post.author.login}}</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div class="col-md-4"><h1>Meilleurs membres</h1>
+			<table class="table table-striped">
+				<tr>
+					<th>Nom</th>
+					<th>Contribution</th>
+				</tr>
+				{% for member in topMembers %}
+				<tr>
+					<td><a href="/ensc-web/profile/{{member.id}}">{{member.login}}</a></td>
+					<td>{{member.nbvotes}}</td>
+				</tr>
+				{%endfor%}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

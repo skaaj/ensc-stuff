@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassInfluence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassInfluence id="Ingénieur">
+    <AvailableSkills>
+      <string>Nuclear Beam</string>
+    </AvailableSkills>
+    <TraitModifiers>
+      <TraitModifier id="IQ">
+        <StartingBonus>2</StartingBonus>
+        <Factor>1.5</Factor>
+      </TraitModifier>
+    </TraitModifiers>
+  </ClassInfluence>
+  <ClassInfluence id="Opposant">
+    <AvailableSkills>
+      <string>Singularity Kung Fu</string>
+    </AvailableSkills>
+    <TraitModifiers>
+      <TraitModifier id="S">
+        <StartingBonus>2</StartingBonus>
+        <Factor>1.5</Factor>
+      </TraitModifier>
+    </TraitModifiers>
+  </ClassInfluence>
+</ArrayOfClassInfluence>

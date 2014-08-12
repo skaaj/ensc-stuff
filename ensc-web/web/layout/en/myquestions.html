@@ -1,0 +1,29 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped">
+				<tr>
+					<th>Question</th>
+					<th>number of answers</th>
+					<th>Status</th>
+				</tr>
+				{% if questions|length>0 %}
+				{% for i in range(0, questions|length-1)%}
+				<tr>
+					<td><a href="/ensc-web/view/{{questions[i].post.id}}">{{questions[i].title}}</a></td>
+					<td>{{nbResponses[i]}}</td>
+					<td>{% if (questions[i].solved) %}
+						<span class="label label-success">Solved</span>
+						{% else %}
+						<span class="label label-warning">Pending</span>
+						{% endif %}</td>
+				</tr>
+				{% endfor %}
+				{% endif %}
+			</table>
+	</div>
+</div>
+{% endblock %}

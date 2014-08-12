@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	{% block head %}<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AskIt - Knowledge is made to be shared</title>
+
+	<!-- Bootstrap -->
+	<link href="http://denom.fr/ensc-web/web/css/bootstrap.css" rel="stylesheet">
+	<link href="http://denom.fr/ensc-web/web/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://denom.fr/ensc-web/web/css/jquery-ui.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	{% endblock %}</head>
+
+	<body>
+		<div id="wrapper">
+			{% include '/navbar.html' %}
+			{% block content %}{% endblock %}
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+		    <div class="container">
+		    	{% block footer %}
+		    	<div class="container">
+		    		<div class="row">
+			    		<div class="col-md-8">
+			    			<p><b><a href="/ensc-web/index">AskIt</a></b> © 2014</p>
+			    		</div>
+			    		<div class="col-md-4">
+			    			<div class="row">
+				    			<div class="col-md-6"><a href="#">About</a></div>
+				    			<div class="col-md-6"><a href="#">Help</a></div>
+			    			</div>
+			    		</div>
+		    		</div>
+		    	</div>
+		    	{% endblock %}
+		    </div>
+	    </div>
+	    {% block include_js %}
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://denom.fr/ensc-web/web/js/jquery.min.js"></script>
+		<script src="http://denom.fr/ensc-web/web/js/jquery-ui.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="http://denom.fr/ensc-web/web/js/bootstrap.min.js"></script>
+		<script src="http://denom.fr/ensc-web/web/js/app.js"></script>
+		{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassInfluence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassInfluence id="Mage">
+    <AvailableSkills>
+      <string>Boule de feu</string>
+    </AvailableSkills>
+    <TraitModifiers>
+      <TraitModifier id="IQ">
+        <StartingBonus>2</StartingBonus>
+        <Factor>1.5</Factor>
+      </TraitModifier>
+    </TraitModifiers>
+  </ClassInfluence>
+  <ClassInfluence id="Guerrier">
+    <AvailableSkills>
+      <string>Coup tranchant</string>
+    </AvailableSkills>
+    <TraitModifiers>
+      <TraitModifier id="S">
+        <StartingBonus>2</StartingBonus>
+        <Factor>1.5</Factor>
+      </TraitModifier>
+    </TraitModifiers>
+  </ClassInfluence>
+  <ClassInfluence id="Voleur">
+    <AvailableSkills>
+      <string>Coup tranchant</string>
+      <string>Drain de vie</string>
+    </AvailableSkills>
+    <TraitModifiers>
+      <TraitModifier id="DX">
+        <StartingBonus>2</StartingBonus>
+        <Factor>1.5</Factor>
+      </TraitModifier>
+      <TraitModifier id="F">
+        <StartingBonus>1</StartingBonus>
+        <Factor>1.2</Factor>
+      </TraitModifier>
+    </TraitModifiers>
+  </ClassInfluence>
+</ArrayOfClassInfluence>

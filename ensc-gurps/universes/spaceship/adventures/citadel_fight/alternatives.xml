@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAlternative xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>forcem</AlternativeID>
+    <Text>Faire une démonstration de force</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>morpheusleft</FailID>
+    <TraitID>S</TraitID>
+    <Goal>20</Goal>
+  </Alternative>
+  <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>forcen</AlternativeID>
+    <Text>Faire une démonstration de force</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>neoleft</FailID>
+    <TraitID>S</TraitID>
+    <Goal>20</Goal>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight_morpheus1</AlternativeID>
+    <Text>Attaquer Morpheus</Text>
+    <SuccessID>neoleft</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>morpheus</NPCID>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight_neo1</AlternativeID>
+    <Text>Attaquer Neo</Text>
+    <SuccessID>morpheusleft</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>neo</NPCID>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight_morpheus</AlternativeID>
+    <Text>Attaquer Morpheus</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>morpheus</NPCID>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight_neo</AlternativeID>
+    <Text>Attaquer Neo</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>neo</NPCID>
+  </Alternative>
+</ArrayOfAlternative>

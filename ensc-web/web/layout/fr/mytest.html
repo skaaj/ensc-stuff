@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+		<link href="../web/css/bootstrap.css" rel="stylesheet">
+		<link href="web/css/bootstrap.css" rel="stylesheet">
+	<link href="web/css/style.css" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h1>What's hot?<a href="/ensc-web/tests/ask" class="btn btn-success btn-large" role="button"><i class="icon-white icon-play"></i> ASK</a></h1>
+					<table class="table table-striped">
+					<tr><th>Question</th><th>Posted by</th></tr>
+
+					{% for element in topQuestions %}
+            			<tr><td>
+            			<a href="/ensc-web/tests/view/{{element.question.post.id}}">{{ element.question.title }}</a>
+
+            			</td><td>{{element.author.login}}</td>
+						<td>
+						{% if (element.question.solved) %}
+						<span class="label label-success">Solved</span>
+						{% else %}
+						<span class="label label-warning">Pending</span>
+						{% endif %}
+						</td>
+						<td>
+						{% if(user!=null) and (user.role.name=="administrator") %}
+						<a class="btn btn-error btn-xs" href="/ensc-web/tests/deletequestion/{{element.question.post.id}}"><span class="glyphicon glyphicon-remove"></span></a>
+						{% endif %}
+						</td>
+            			</tr>
+
+        			{% endfor %}
+
+					</table>
+				</div>
+			</div>
+	</div>
+</body>
+</html>

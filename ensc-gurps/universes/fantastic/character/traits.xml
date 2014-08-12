@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTrait xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Trait id="S">
+    <Name>Force</Name>
+    <Value>10</Value>
+    <Cost>10</Cost>
+  </Trait>
+  <Trait id="IQ">
+    <Name>Intelligence</Name>
+    <Value>10</Value>
+    <Cost>20</Cost>
+  </Trait>
+  <Trait id="DX">
+    <Name>Dextérité</Name>
+    <Value>10</Value>
+    <Cost>20</Cost>
+  </Trait>
+</ArrayOfTrait>

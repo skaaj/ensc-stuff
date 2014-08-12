@@ -1,0 +1,33 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<h1>Your favourite questions</h1>
+		<table class="table table-striped">
+
+				<tr>
+					<th>Question</th>
+					<th>Number of answers</th>
+					<th>Action</th>
+				</tr>
+				{% if( questions|length > 0)%}
+				{% for i in range(0, questions|length-1) %}
+				<tr>
+					<td>
+					<a href="/ensc-web/view/{{questions[i].post.id}}" >{{questions[i].title}}</a></td>
+					<td>{{responcesCounts[i]}}</td>
+					<td><form method="post" action="/ensc-web/account/deletesave">
+						<input type="hidden" name="userId" value="{{user.id}}"/>
+						<input type="hidden" name="postId" value="{{questions[i].post.id}}"/>
+						<button type="submit" class="btn btn-xs btn-warning">Not any more a favourite</button>
+					</form></td>
+				</tr>
+				{% endfor %}
+				{% endif %}
+			</table>
+	</div>
+</div>
+</div>
+{% endblock %}

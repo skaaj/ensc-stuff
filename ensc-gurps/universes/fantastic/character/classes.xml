@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Class>
+    <Name>Mage</Name>
+    <Brief>Un mage est un magicien.</Brief>
+  </Class>
+  <Class>
+    <Name>Guerrier</Name>
+    <Brief>Un guerrier est un soldat efficace au combat.</Brief>
+  </Class>
+  <Class>
+    <Name>Voleur</Name>
+    <Brief>Un voleur est un assassin discret.</Brief>
+  </Class>
+</ArrayOfClass>

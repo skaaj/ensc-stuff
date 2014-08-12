@@ -1,0 +1,162 @@
+.gradient{
+	color:#f2f2f2;
+	background-image: linear-gradient(to top,#3498db 20%,#2980b9 100%);
+	background-repeat: repeat-x;
+}
+
+.tagInput{
+	border: none;
+}
+
+.tagInput:focus{
+	border: none;
+	outline-width: 0;
+
+}
+
+html,
+body {
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+#push,
+#footer {
+	height: 60px;
+}
+
+#footer {
+	background-color: #f5f5f5;
+	line-height: 60px;
+}
+
+@media (max-width: 767px) {
+	#footer {
+	  margin-left: -20px;
+	  margin-right: -20px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	}
+}
+
+#wrapper > .container {
+	padding-top: 60px;
+}
+
+.container .credit {
+	margin: 20px 0;
+}
+
+code {
+	font-size: 80%;
+}
+
+.answer_post{
+	float: left;
+}
+
+.answer_vote{
+	float: right;
+}
+
+.center_td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+}
+
+.jumbotron input{
+	height: 50px;
+}
+
+.btn-send{
+	width:100%;
+	margin-top: 10px;
+	border:1px solid white;
+}
+.subnavbar{
+	height: 4px;
+}
+
+.big-search{
+	height: 45px;
+	border:1px solid #aaa;
+	margin-bottom: 10px;
+	font-size: 21px;
+}
+
+.btn-register{
+	height:40px;
+}
+
+.navbar-form{
+	padding:0;
+}
+
+#footer p{
+	margin:0;
+}
+
+.icon-left{
+	margin-right: 20px;
+}
+
+.icon-right{
+	margin-left: 20px;
+}
+
+.btn-expanded{
+	width: 100%;
+}
+
+.push-back{
+	margin-bottom: 40px;
+}
+
+.nbvotes{
+	text-align: center;
+}
+
+
+.hide {
+    display: none;
+}

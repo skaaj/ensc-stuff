@@ -1,0 +1,125 @@
+{% extends "/base.html" %}
+
+{% block content %}
+{% set nlogged = ((user!=null) and (alreadySaved==true))or (user==null) %}
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<table>
+			<div class="row">
+				<div class="col-md-10">
+					<h2>{{ question.title }}</h2>
+				</div>
+				<div class="col-md-2">
+					{% if nlogged  %}
+						<h2><button id="saveButton" class="btn btn-success" disabled><span class="glyphicon glyphicon-star"></span> Follow</button></h2>
+					{% else %}
+						<h2><button id="saveButton" class="btn btn-success" onclick="saveQuestion({{question.post.id}},{{user.id}})"><span class="glyphicon glyphicon-star"></span> Follow</button></h2>
+					{% endif %}
+				</div>
+			</div>
+			<table class="table table-striped">
+				{% for post in posts %}
+				{% set alreadyvoted = (attribute(alreadyVoted,post.id)==true) %}
+				{% if (post.solution==true) %}
+				<tr class="success">
+				{% else %}
+				<tr>
+				{% endif %}
+					<td>
+						<p>{{ post.message }}</p>
+						<p>&nbsp;</p>
+						<p>Posté par	 <b> <a href="/ensc-web/profile/{{post.author.id}}">{{post.author.login}}</a></b> the <b>{{post.date}}.<small><a href=""  data-toggle="modal" data-target="#delete_modal">Report.</a></small></b>.
+						{% if (post.solution==false) and (post.parent!=null) and (posts[0].author.id==user.id) %}
+								<a href="/ensc-web/marksolution/{{post.id}}/{{question.post.id}}">
+
+							Mark as solution.
+							</a>
+						{% endif %}</p>
+
+						<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						        <h4 class="modal-title" id="myModalLabel">Report</h4>
+						      </div>
+						     <form method="POST" action="/ensc-web/report">
+								<input type="hidden" name="postId" value="{{post.id}}"/>
+						      <div class="modal-body">
+						      <p>In order to make the report <b>easier</b>, please tell us your motif <b>. We are very grateful.</b><br></p>
+								<h4>Motif</h4>
+								<p><textarea class="form-control" placeholder="Votre motif ..." name="comment"></textarea></p>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						        <button type="submit" class="btn btn-primary">Report</button>
+						      </div>
+						      </form>
+						    </div>
+						  </div>
+						</div>
+					</td>
+					<td>
+						{% if nlogged or alreadyvoted %}
+							<table>
+							<tr>
+								<td><button type="button" id="addVoteBtn{{post.id}}" class="btn btn-success btn-xs"  onclick="addVote({{post.id}});" disabled><span class="glyphicon glyphicon-arrow-up"></span></button></td>
+							</tr>
+							<tr>
+								<td class="nbvotes"><label id="nbVotes{{post.id}}" disabled>{{post.nbvotes}}</label></td>
+							</tr>
+							<tr>
+								<td><button type="button" id="delVoteBtn{{post.id}}" class="btn btn-danger btn-xs"  onclick="deleteVote({{post.id}});" disabled><span class="glyphicon glyphicon-arrow-down"></span></button></td>
+							</tr>
+							</table>
+						{% else %}
+							<table>
+							<tr>
+								<td><button type="button" id="addVoteBtn{{post.id}}" class="btn btn-success btn-xs"  onclick="addVote({{post.id}});"><span class="glyphicon glyphicon-arrow-up"></span></button></td>
+							</tr>
+							<tr>
+								<td style="text-align:center"><label id="nbVotes{{post.id}}" disabled>{{post.nbvotes}}</label></td>
+							</tr>
+							<tr>
+								<td><button type="button" id="delVoteBtn{{post.id}}" class="btn btn-danger btn-xs"  onclick="deleteVote({{post.id}});"><span class="glyphicon glyphicon-arrow-down"></span></button></td>
+							</tr>
+							</table>
+						{% endif %}
+
+					</td>
+				</tr>
+
+
+				{% if(post.parent==null) and (posts|length>1) %}
+				<tr><td><h2>Answers</h2></td><td></td></tr>
+				{% endif %}
+				{% endfor %}
+			</table>
+			{% if user!=null %}
+				<form name="new_question" method="POST" action="/ensc-web/answer" class="form-horizontal" role="form">
+					<input type="hidden" name="questionId" value="{{question.post.id}}"/>
+					<textarea name="message" cols="59" rows="6" placeholder="Votre réponse..." class="form-control"></textarea>
+					<br/><button type="submit" class="btn btn-lg btn-success">Answer</button>
+				</form>
+			{% else %}
+				<p>Please <a href="/ensc-web/signin">sign up</a> to answer.</p>
+			{% endif %}
+		</div>
+		<div class="col-md-offset-1 col-md-3">
+			<h1>Tags liés</h1>
+			<ul id="tagList" class="list-inline">
+			{% for tag in tags %}
+				<li>
+					<span class="label label-primary">
+					{{tag.name}}	
+					</span>
+				</li>
+			{% endfor %}
+			</ul>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

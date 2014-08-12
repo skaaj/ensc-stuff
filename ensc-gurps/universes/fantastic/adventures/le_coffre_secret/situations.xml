@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSituation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Situation>
+    <SituationID>root</SituationID>
+    <Text>Vous découvrez un coffre.</Text>
+    <ChildrenIDs>
+      <string>dexterity</string>
+      <string>force</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>loose</SituationID>
+    <Text>Dommage... Fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+  <Situation>
+    <SituationID>guard</SituationID>
+    <Text>Dommage! Vos tentatives sont vaines et une magicienne arrive.</Text>
+    <ChildrenIDs>
+      <string>fight</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>bro</SituationID>
+    <Text>Vous avez gagné contre la magicienne mais son frère arrive et vous attaque.</Text>
+    <ChildrenIDs>
+      <string>defend</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>end</SituationID>
+    <Text>Bravo! Vous ouvrez le coffre et découvrez la fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+</ArrayOfSituation>

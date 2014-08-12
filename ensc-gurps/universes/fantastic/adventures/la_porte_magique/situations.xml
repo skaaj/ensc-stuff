@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSituation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Situation>
+    <SituationID>root</SituationID>
+    <Text>Vous vous trouvez devant une porte. Celle-ci est gardée par un soldat.</Text>
+    <ChildrenIDs>
+      <string>dexterity</string>
+      <string>intelligence</string>
+      <string>fight</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>end</SituationID>
+    <Text>Bravo! Vous passez la porte. Fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+  <Situation>
+    <SituationID>loose</SituationID>
+    <Text>Dommage... Vous n'êtes pas parvenu à passer la porte. Fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+  <Situation>
+    <SituationID>guard</SituationID>
+    <Text>Dommage! Le garde n'apprécie pas votre présence est devient hostile.</Text>
+    <ChildrenIDs>
+      <string>force</string>
+      <string>fight</string>
+    </ChildrenIDs>
+  </Situation>
+</ArrayOfSituation>

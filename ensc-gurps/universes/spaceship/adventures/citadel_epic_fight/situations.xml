@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSituation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Situation>
+    <SituationID>root</SituationID>
+    <Text>Deux hologrammes sont parvenus à s'échapper de la matrice et se tiennent face à vous.</Text>
+    <ChildrenIDs>
+      <string>fight_morpheus1</string>
+      <string>fight_neo1</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>neoleft</SituationID>
+    <Text>Vous avez vaincu Morpheus mais il reste encore Neo.</Text>
+    <ChildrenIDs>
+      <string>forcen</string>
+      <string>fight_neo</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>morpheusleft</SituationID>
+    <Text>Vous avez vaincu Neo mais il reste encore Morpheus.</Text>
+    <ChildrenIDs>
+      <string>forcem</string>
+      <string>fight_morpheus</string>
+    </ChildrenIDs>
+  </Situation>
+  <Situation>
+    <SituationID>end</SituationID>
+    <Text>Bravo! Vous avez vaincu tout le monde. Fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+  <Situation>
+    <SituationID>loose</SituationID>
+    <Text>Dommage... Vous avez été vaincu. Fin du jeu.</Text>
+    <ChildrenIDs />
+  </Situation>
+</ArrayOfSituation>

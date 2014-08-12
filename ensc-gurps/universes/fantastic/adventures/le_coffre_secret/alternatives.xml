@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAlternative xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>dexterity</AlternativeID>
+    <Text>Essayer de l'ouvrir</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>guard</FailID>
+    <TraitID>DX</TraitID>
+    <Goal>12</Goal>
+  </Alternative>
+    <Alternative xsi:type="TraitAlternative">
+    <AlternativeID>force</AlternativeID>
+    <Text>Le casser</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>guard</FailID>
+    <TraitID>S</TraitID>
+    <Goal>16</Goal>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>fight</AlternativeID>
+    <Text>Attaquer la magicienne</Text>
+    <SuccessID>bro</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>maven</NPCID>
+  </Alternative>
+  <Alternative xsi:type="NPCAlternative">
+    <AlternativeID>defend</AlternativeID>
+    <Text>Se défendre</Text>
+    <SuccessID>end</SuccessID>
+    <FailID>loose</FailID>
+    <NPCID>ulfric</NPCID>
+  </Alternative>
+</ArrayOfAlternative>

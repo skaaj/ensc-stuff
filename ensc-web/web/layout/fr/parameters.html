@@ -1,0 +1,74 @@
+{% extends "/base.html" %}
+
+{% block content %}
+<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Suppression</h4>
+      </div>
+     <form method="POST" action="deleteaccount">
+     <input type="hidden" name="userId" value="{{user.id}}"/>
+      <div class="modal-body">
+		<p>En saisissant votre mot de passe, vous confirmez que vous êtes bien le titulaire du compte à supprimer. La suppression de votre compte entrainera la suppression définitive de vos données personnelles.<br></p>
+		<h4>Tapez votre mot de passe</h4>
+		<p><input type="password" class="form-control" placeholder="Mot de passe" name="password"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Supprimer</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="gradient subnavbar"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		<form method="POST" action="/ensc-web/updateaccount">
+			<table class="table table-striped">
+				<tr>
+					<th>Informations</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>Nom d'utilisateur</td>
+					<td><input type="password" class="form-control" placeholder="{{user.login}}" disabled></td>
+				</tr>
+				<tr>
+					<td>Prénom</td>
+					<td><input name="firstname" type="text" class="form-control"  value="{{user.firstname}}"></td>
+				</tr>
+				<tr>
+					<td>Nom</td>
+					<td><input name="lastname" type="text" class="form-control" value="{{user.lastname}}"></td>
+				</tr>
+				<tr>
+					<td>E-Mail</td>
+					<td><input name="email" type="email" class="form-control" value="{{user.email}}"></td>
+				</tr>
+				<tr>
+					<td>Rôle</td>
+					<td><input type="password" class="form-control" placeholder="Rôle" disabled></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-primary btn-send btn-register">Mettre à jour mes informations</button>
+					</td>				
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div class="col-md-4">
+				<h3>Désirez-vous partir?</h3>
+				<p>
+					Si vous supprimez votre compte, vous perdrez toutes vos données stockées sur Askit.
+				</p>
+				<button class="btn btn-danger btn-send btn-register" data-toggle="modal" data-target="#delete_modal">Supprimer mon compte</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
